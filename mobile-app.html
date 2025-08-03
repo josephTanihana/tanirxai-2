@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI Code Assistant - Mobile</title>
+    <link rel="stylesheet" href="mobile-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <h1>AI Code Assistant</h1>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#home" class="nav-link active" onclick="showSection('home')">Home</a>
+                <a href="#generator" class="nav-link" onclick="showSection('generator')">Code Generator</a>
+                <a href="#languages" class="nav-link" onclick="showSection('languages')">Languages</a>
+                <a href="#settings" class="nav-link" onclick="showSection('settings')">Settings</a>
+            </nav>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="mobile-section active">
+            <div class="hero-mobile">
+                <h1 class="hero-title">
+                    AI-Powered Code Generation
+                    <span class="gradient-text">100,000+ Languages</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Build any application with our advanced AI that understands and generates code in virtually any programming language.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showSection('generator')">
+                        <i class="fas fa-rocket"></i>
+                        Start Coding
+                    </button>
+                    <button class="btn btn-secondary" onclick="showDemo()">
+                        <i class="fas fa-play"></i>
+                        Watch Demo
+                    </button>
+                </div>
+            </div>
+            
+            <div class="features-mobile">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>100,000+ Languages</h3>
+                    <p>Support for virtually every programming language, framework, and technology stack.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced AI</h3>
+                    <p>State-of-the-art AI models trained on millions of code examples and documentation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Generation</h3>
+                    <p>Generate complete applications, functions, and components in seconds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Generator Section -->
+        <section id="generator" class="mobile-section">
+            <div class="generator-header">
+                <h2>AI Code Generator</h2>
+                <p>Describe what you want to build and our AI will generate the code for you.</p>
+            </div>
+            
+            <div class="generator-form">
+                <div class="form-group">
+                    <label for="mobile-language-select">Programming Language:</label>
+                    <select id="mobile-language-select">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="java">Java</option>
+                        <option value="swift">Swift (iOS)</option>
+                        <option value="kotlin">Kotlin (Android)</option>
+                        <option value="rust">Rust</option>
+                        <option value="go">Go</option>
+                        <option value="cpp">C++</option>
+                        <option value="csharp">C#</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mobile-code-prompt">Describe your application:</label>
+                    <textarea id="mobile-code-prompt" placeholder="e.g., Create a web API with user authentication, or build an iOS app with a todo list..."></textarea>
+                </div>
+                
+                <button class="btn btn-primary generate-btn" onclick="generateMobileCode()">
+                    <i class="fas fa-magic"></i>
+                    Generate Code
+                </button>
+            </div>
+            
+            <div class="code-output" id="mobileCodeOutput">
+                <div class="output-header">
+                    <h3>Generated Code</h3>
+                    <div class="output-actions">
+                        <button class="btn btn-secondary" onclick="copyMobileCode()">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="downloadMobileCode()">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <pre id="mobile-generated-code"><code>// Your AI-generated code will appear here...</code></pre>
+            </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section id="languages" class="mobile-section">
+            <h2>Supported Languages</h2>
+            <div class="languages-grid-mobile">
+                <div class="language-card">
+                    <div class="language-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Web apps, ML, data science</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Web development, Node.js</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">📱</div>
+                    <h3>Swift</h3>
+                    <p>iOS apps, macOS</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">🔵</div>
+                    <h3>Kotlin</h3>
+                    <p>Android development</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">🦀</div>
+                    <h3>Rust</h3>
+                    <p>Systems programming</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">☕</div>
+                    <h3>Java</h3>
+                    <p>Enterprise apps</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">🎯</div>
+                    <h3>TypeScript</h3>
+                    <p>Type-safe JavaScript</p>
+                </div>
+                <div class="language-card">
+                    <div class="language-icon">🔷</div>
+                    <h3>C#</h3>
+                    <p>Windows apps, Unity</p>
+                </div>
+            </div>
+            <div class="more-languages">
+                <p>And 99,992+ more languages and frameworks...</p>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="mobile-section">
+            <h2>Settings</h2>
+            <div class="settings-content">
+                <div class="setting-item">
+                    <label>Theme</label>
+                    <select id="theme-select">
+                        <option value="auto">Auto</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Code Style</label>
+                    <select id="code-style-select">
+                        <option value="standard">Standard</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="verbose">Verbose</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Auto-save</label>
+                    <input type="checkbox" id="auto-save" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Notifications</label>
+                    <input type="checkbox" id="notifications" checked>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Action Button -->
+        <div class="fab" onclick="showSection('generator')">
+            <i class="fas fa-code"></i>
+        </div>
+    </div>
+
+    <script src="mobile-script.js"></script>
+</body>
+</html> 

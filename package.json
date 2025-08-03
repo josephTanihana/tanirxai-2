@@ -1,0 +1,32 @@
+{
+  "name": "ai-code-assistant-website",
+  "version": "1.0.0",
+  "description": "AI-powered code generation website with support for 100,000+ programming languages",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "ai",
+    "code-generation",
+    "programming",
+    "web-development",
+    "javascript",
+    "python",
+    "react",
+    "html",
+    "css"
+  ],
+  "author": "AI Code Assistant",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-code-assistant-website"
+  },
+  "homepage": "https://your-site-name.netlify.app",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
